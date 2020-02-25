@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "dependencies": {
+    "co": "^4.6.0",
+    "thunkify": "^2.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "heyongliang",
+  "license": "ISC"
+}
