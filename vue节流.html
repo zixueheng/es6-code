@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button id="but" @click="zanClick">Click</button>
+    </div>
+    <script type="text/javascript">
+        var zanCount = 0;
+        function debounce(fn, delay=1000) {
+            var timeout = null;
+            return function (e) {
+                zanCount++;
+
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    fn.apply(this, arguments);
+                }, delay);
+            };
+        }
+        new Vue({
+            el: '#app',
+            data: {
+
+            },
+            methods: {
+                zanClick: debounce(function (e) {
+                    console.log(zanCount);
+                    zanCount = 0;
+                }, 3000)
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="but">Click</button>
+    <script>
+        var count = 0;
+        function debounce(fn, delay) {
+            var timeout = null;
+            return function (e) {
+                count++;
+
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    fn.apply(this, arguments);
+                }, delay);
+            };
+        }
+        function handle() {
+            console.log(count);
+            console.log(Math.random());
+            count = 0;
+        }
+
+        document.getElementById("but").addEventListener('click', debounce(handle, 3000));
+    </script>
+</body>
+
+</html>
